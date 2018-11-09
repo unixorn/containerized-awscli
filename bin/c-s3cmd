@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# Shim awscli into our docker container
+#
+# Copyright 2018, Joe Block <jpb@unixorn.net>
+
+cd "$(dirname $0)"
+echo "pwd $(pwd)"
+
+./build-containerized-awscli-if-required
+
+exec docker-compose run --rm c-awscli "s3cmd $@"

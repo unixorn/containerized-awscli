@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  c-awscli:
+    build: .
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+    volumes:
+     - "~/.aws/:/root/.aws"
+     - "./docker/.bash_history:/root/.bash_history"
