@@ -1,7 +1,3 @@
-#!/usr/bin/env bash
-#
-# Shim awscli into our docker container
-#
 # Copyright 2018 Joseph Block <jpb@unixorn.net>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,8 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cd "$(dirname $0)"
-
-./build-containerized-awscli-if-required
-
-exec docker-compose run --rm c-awscli "aws $@"
+# Add our plugin's bin diretory to user's path
+PLUGIN_BIN="$(dirname $0)/bin"
+export PATH=${PATH}:${PLUGIN_BIN}
