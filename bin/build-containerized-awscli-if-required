@@ -1,0 +1,36 @@
+#!/bin/bash
+
+debugOut() {
+  if [[ -n "$DEBUG" ]]; then
+    echo "$@"
+  fi
+}
+
+build-containerized-awscli-if-required() {
+  local BUILD='NO'
+  local HASH_F=~/.containerized-awscli.hash
+  local DOCKERFILE_HASH=''
+  local DOCKERFILE_P="$(dirname $0)/../Dockerfile"
+
+  if [[ ! -f "${HASH_F}" ]]; then
+    BUILD='YES'
+  else
+    DOCKERFILE_HASH=$(md5 "${DOCKERFILE_P}" | cut -d'=' -f2 | sed 's/ //g')
+    OLD_DOCKERFILE_HASH=$(cat "${HASH_F}")
+    if [[ "${DOCKERFILE_HASH}" == "${OLD_DOCKERFILE_HASH}" ]]; then
+      BUILD='NO'
+    fi
+  fi
+
+  if [[ "$BUILD" == 'YES' ]]; then
+    debugOut "Dockerfile has changed, rebuilding container"
+    cd $(dirname "${DOCKERFILE_P}")
+    docker-compose build
+    if [[ $? -eq 0 ]]; then
+      debugOut "build ok, writing hash to $HASH_F"
+      echo $DOCKERFILE_HASH > "${HASH_F}"
+    fi
+  fi
+}
+
+build-containerized-awscli-if-required
