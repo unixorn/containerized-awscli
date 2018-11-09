@@ -4,6 +4,21 @@
 
 Run `awscli` or `s3cmd` in a container. This tooling is released under the Apache 2.0 license.
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [containerized-awscli](#containerized-awscli)
+  - [Motivation](#motivation)
+  - [Pre-requisites](#pre-requisites)
+  - [Installation](#installation)
+    - [Antigen](#antigen)
+    - [Oh-My-Zsh](#oh-my-zsh)
+    - [Zgen](#zgen)
+    - [Without a framework, or for bash users](#without-a-framework-or-for-bash-users)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Motivation
 
 The security ~malware~ software on my work machine slows down the `aws` and `s3cmd` commands. Running them in a Docker container sans malware speeds things up, and as an added benefit, updates itself faster than `brew` updates software versions.
