@@ -21,7 +21,7 @@ Run `awscli` or `s3cmd` in a container. This tooling is released under the Apach
 
 ## Motivation
 
-The security ~malware~ software on my work machine slows down the `aws` and `s3cmd` commands. Running them in a Docker container sans malware speeds things up, and as an added benefit, updates itself faster than `brew` updates software versions.
+The security ~malware~ software on my work machine slows down the `aws` and `s3cmd` commands. Running them in a Docker container sans malware speeds things up, and as an added benefit, provides updates to new versions faster than `brew` updates does.
 
 ## Pre-requisites
 
