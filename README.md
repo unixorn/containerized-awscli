@@ -7,6 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/unixorn/containerized-awscli.svg)](https://github.com/unixorn/containerized-awscli/stargazers)
 [![Code Climate](https://codeclimate.com/github/unixorn/containerized-awscli/badges/gpa.svg)](https://codeclimate.com/github/unixorn/containerized-awscli)
 [![Issue Count](https://codeclimate.com/github/unixorn/containerized-awscli/badges/issue_count.svg)](https://codeclimate.com/github/unixorn/containerized-awscli)
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/unixorn/containerized-awscli/master.svg)](https://github.com/unixorn/containerized-awscli)
 
 Run `awscli` or `s3cmd` in a container. This tooling is released under the Apache 2.0 license.
 
