@@ -17,7 +17,6 @@
 
 - [ ] Any scripts added use `#!/usr/bin/env interpreter` instead of direct paths (`#!/bin/sh` and `#!/bin/bash` are acceptable exceptions)
 - [ ] Scripts added/updated in this PR are marked executable
-- [ ] I have added a credit line to README.md for any new scripts
 
 # Copyright Assignment
 
