@@ -32,6 +32,8 @@ build-containerized-awscli-if-required() {
     OLD_DOCKERFILE_HASH=$(cat "${HASH_F}")
     if [[ "${DOCKERFILE_HASH}" == "${OLD_DOCKERFILE_HASH}" ]]; then
       BUILD='NO'
+    else
+      BUILD='YES'
     fi
   fi
 
@@ -43,6 +45,8 @@ build-containerized-awscli-if-required() {
       debugOut "build ok, writing hash to $HASH_F"
       echo $DOCKERFILE_HASH > "${HASH_F}"
     fi
+  else
+    debugOut "Dockerfile unchanged, skipping rebuild"
   fi
 }
 
