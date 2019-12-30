@@ -28,11 +28,14 @@ Run `awscli` or `s3cmd` in a container. This tooling is released under the Apach
 
 ## Motivation
 
-The security ~malware~ software on my work machine slows down the `aws` and `s3cmd` commands. Running them in a Docker container sans malware speeds things up, and as an added benefit, provides updates to new versions faster than `brew` updates does.
+The security ~software~ malware on my work machine frequently breaks the `aws` and `s3cmd` commands when they tweak the settings. I need them for work, so I built a container they can't break.
+
+Running them in a Docker container sans malware has an added benefit by providing updates to new versions faster than `brew` updates does.
 
 ## Pre-requisites
 
-You need to install Docker.
+* You need to install Docker.
+* You need `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` set in your environment
 
 ## Installation
 
