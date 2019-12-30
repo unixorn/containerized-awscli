@@ -15,14 +15,14 @@ Run `awscli` or `s3cmd` in a container. This tooling is released under the Apach
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Table of Contents
 
-- [containerized-awscli](#containerized-awscli)
-  - [Motivation](#motivation)
-  - [Pre-requisites](#pre-requisites)
-  - [Installation](#installation)
-    - [Antigen](#antigen)
-    - [Oh-My-Zsh](#oh-my-zsh)
-    - [Zgen](#zgen)
-    - [Without a framework, or for bash users](#without-a-framework-or-for-bash-users)
+- [Motivation](#motivation)
+- [Pre-requisites](#pre-requisites)
+- [Usage](#usage)
+- [Installation](#installation)
+  - [Antigen](#antigen)
+  - [Oh-My-Zsh](#oh-my-zsh)
+  - [Zgen](#zgen)
+  - [Without a framework, or for bash users](#without-a-framework-or-for-bash-users)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -36,6 +36,10 @@ Running them in a Docker container sans malware has an added benefit by providin
 
 * You need to install Docker.
 * You need `AWS_SECRET_ACCESS_KEY` and `AWS_ACCESS_KEY_ID` set in your environment
+
+## Usage
+
+Use `c-aws` in your shell instead of `aws`. `c-aws` passes any arguments to `aws` run inside the container.
 
 ## Installation
 
