@@ -27,3 +27,10 @@ task :build_container do
   sh %{ docker push #{CONTAINER_NAME}:#{PROCESSOR} }
   sh %{ docker push #{CONTAINER_NAME}:#{PROCESSOR}-#{TIMESTAMP} }
 end
+
+desc 'Use buildx to make a multi-arch container'
+task :multiarch_build do
+  puts "Building #{CONTAINER_NAME}"
+  sh %{ docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 --push -t #{CONTAINER_NAME} .}
+  sh %{ docker pull #{CONTAINER_NAME} }
+end

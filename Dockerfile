@@ -5,7 +5,8 @@ LABEL description="aws cli tools on debian buster-slim"
 RUN apt-get update && \
     apt-get install -y apt-utils && \
     apt-get upgrade -y --no-install-recommends && \
-    apt-get install -y --no-install-recommends python3-pip
+    apt-get install -y --no-install-recommends python3-pip && \
+		rm -fr /tmp/* /var/lib/apt/lists/*
 
 # Install AWS tools
 RUN pip3 install setuptools wheel && \
