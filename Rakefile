@@ -18,16 +18,6 @@ end
 
 # Tasks
 
-desc 'build container'
-task :build_container do
-  puts "Building #{CONTAINER_NAME} for #{PROCESSOR}"
-  sh %{ docker-compose build }
-  sh %{ docker tag containerized-awscli_c-awscli #{CONTAINER_NAME}:#{PROCESSOR} }
-  sh %{ docker tag containerized-awscli_c-awscli #{CONTAINER_NAME}:#{PROCESSOR}-#{TIMESTAMP} }
-  sh %{ docker push #{CONTAINER_NAME}:#{PROCESSOR} }
-  sh %{ docker push #{CONTAINER_NAME}:#{PROCESSOR}-#{TIMESTAMP} }
-end
-
 desc 'Use buildx to make a multi-arch container'
 task :multiarch_build do
   puts "Building #{CONTAINER_NAME}"
