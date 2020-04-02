@@ -2,7 +2,8 @@ version: "3.2"
 
 services:
   c-awscli:
-    build: .
+    # build: .
+    image: unixorn/containerized-awscli
     environment:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
