@@ -1,8 +1,8 @@
 task :default => [:usage]
 task :help => [:usage]
 task :clean => [:purge]
-task :build => [:build_container]
-task :b => [:build_container]
+task :build => [:multiarch_build]
+task :b => [:multiarch_build]
 
 CONTAINER_NAME = 'unixorn/containerized-awscli'
 PROCESSOR=`uname -m`.strip()
